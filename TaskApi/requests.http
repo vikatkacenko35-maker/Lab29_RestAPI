@@ -1,0 +1,44 @@
+@baseUrl = http://localhost:5156
+
+GET {{baseUrl}}/api/tasks
+
+GET {{baseUrl}}/api/tasks?completed=true
+
+
+GET {{baseUrl}}/api/tasks?completed=false
+
+
+GET {{baseUrl}}/api/tasks/1
+
+
+GET {{baseUrl}}/api/tasks/999
+
+
+POST {{baseUrl}}/api/tasks
+Content-Type: application/json
+{
+    "title": "ЗАдача из RESt Client",
+    "description": "Создан через файл .http",
+    "priority": "High"
+}
+
+POST {{baseUrl}}/api/tasks
+Content-Type: application/json
+{
+    "title": "",
+    "description": "Описание без заголовка",
+    "priority": "Normal"
+}
+
+PATCH {{baseUrl}}/api/tasks/2/complete
+
+PUT {{baseUrl}}/api/tasks/1
+Content-Type: application/json
+{
+    "title": "Изучить ASP.NET",
+    "description": "Контроллеры, маршруты,  DTO",
+    "IsCompleted": true,
+    "priority": "High"
+}
+
+DELETE {{baseUrl}}/api/tasks/4
